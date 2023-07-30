@@ -23,20 +23,64 @@ class acientGeo {
    getC() {return this.c}
    getM() {return this.m}
 }
-class rectangle extends acientGeo{
+class square extends acientGeo{
   constructor(a){
       super(a,a);
-  }
+   }
+   getRectDiag() {return Math.sqrt(2)*this.a}   //átló
+   getRectArea() {return Math.pow(this.a,2)}   //terület
+   getRectPerim() {return (4*this.a)}   //kerület
+}
+class rectangle extends acientGeo{
+   constructor(a,b){
+      super(a,b);
+   }         
+   getSqArea() {return this.a*this.b}   //terület
+   getSqPerim() {return (2*(this.a+this.b))}   //kerület
 }
 // menage inputfields display
 const geo = (e) =>{
    const target = e.target;
-      if(target.id="rectangle" || target.tagname == "img"){
+   console.log(target.id);
+      if((target.id="square") || (target.id= "sqimg")){
+         //define result outputs field
+         areaRes= document.getElementById("AreaResult");
+         perimeterRes= document.getElementById("PerimResult");
+         diagonalRes= document.getElementById("DiagonalResult");
             parA.style.display="block";
-            a= parseFloat(document.getElementById("aSide").value)
-           const rect= new rectangle(a)
-            console.log(rect.getA())
-         }
+            parB.style.display="none";
+            a= parseFloat(document.getElementById("aSide").value);
+            //make new object
+            const sq= new square(a);
+            //add result to labels
+            let area=sq.getRectArea();
+            let perim=sq.getRectPerim();
+            let diagon=sq.getRectDiag();
+            let geometry="Square"
+
+            areaRes.innerText=`${geometry} Area result: ${area} unit`;
+            perimeterRes.innerText=`${geometry} Perimeter result: ${perim} unit`;
+            diagonalRes.innerText=`${geometry} Diagonal result: ${diagon} unit`;
+      }
+      if((target.id="rectangle")||(target.id="rectimg")){
+        //define result outputs field
+        areaRes= document.getElementById("AreaResult");
+        perimeterRes= document.getElementById("PerimResult");
+        diagonalRes= document.getElementById("DiagonalResult");
+           parA.style.display="block";
+           parB.style.display="block";
+           a= parseFloat(document.getElementById("aSide").value);
+           b= parseFloat(document.getElementById("bSide").value);
+           //make new object
+         const rect= new rectangle();
+         let area=rect.getSqArea();
+         let perimeter=rect.getSqPerim();
+         let geometry="Rectangle"
+
+         areaRes.innerText=`${geometry} Area result: ${area} unit`;
+         perimeterRes.innerText=`${geometry} Perimeter result: ${perim} unit`;
+         diagonalRes.innerText=``;
+      }
 }
 
 

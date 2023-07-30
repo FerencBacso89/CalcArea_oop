@@ -23,11 +23,11 @@
 <body>
     <section id="geometries" class="container-fluid">
        <div style="height: 200px;" class="row">
-            <div onclick="geo(event)" id="rectangle" class="selHov col-2">
-                <div id="rectangle"><img class="imgSize " src="https://matek-erthetoen.hu/wp-content/uploads/2021/06/Negyzet_700_tiny.jpg" alt="square"></div>
+            <div onclick="geo(event)" class="selHov col-2">
+                <div id="rectangle"><img id="rectimg" class="imgSize " src="https://matek-erthetoen.hu/wp-content/uploads/2021/06/Negyzet_700_tiny.jpg" alt="square"></div>
             </div>
-            <div class="col-2">
-                <div><img class="imgSize" src="https://matek-erthetoen.hu/wp-content/uploads/2020/07/Teglalap_700_tiny.jpg" alt="rectangle"></div>
+            <div onclick="geo(event)" class="selHov col-2">
+                <div id="square"><img id="sqimg" class="imgSize" style="margin-top: 40px;transform: scale(1.4);" src="https://matek-erthetoen.hu/wp-content/uploads/2020/07/Teglalap_700_tiny.jpg" alt="rectangle"></div>
             </div>
         </div>
     </section>
@@ -41,12 +41,13 @@
                 <input id="bSide" name="bSide" value="0" type="number"></input>
             </div>
         </section>
-        <section class="result">
-                <label id="AreaResult"></label>
-                <label id="PerimResult"></label>
+        <section class="result row">
+                <label class="col" id="AreaResult"></label>
+                <label class="col" id="PerimResult"></label>
+                <label class="col" id="DiagonalResult"></label>
         </section>
     
-        <!-- My own files -->
+        <!-- My own js file -->
         <script src="./oop.js"></script>
 </body>
     
