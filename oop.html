@@ -21,17 +21,22 @@
     <link rel="stylesheet" href="./oop.css" />
 </head>
 <body>
+    <!-- Geometries -->
     <section id="geometries" class="container-fluid">
        <div style="height: 200px;" class="row">
             <div onclick="geo(event)" class="selHov col-2">
-                <div id="rectangle"><img id="rectimg" class="imgSize " src="https://matek-erthetoen.hu/wp-content/uploads/2021/06/Negyzet_700_tiny.jpg" alt="square"></div>
+                <div id="square"><img id="sqimg" class="imgSize " src="https://matek-erthetoen.hu/wp-content/uploads/2021/06/Negyzet_700_tiny.jpg" alt="square"></div>
             </div>
-            <div onclick="geo(event)" class="selHov col-2">
-                <div id="square"><img id="sqimg" class="imgSize" style="margin-top: 40px;transform: scale(1.4);" src="https://matek-erthetoen.hu/wp-content/uploads/2020/07/Teglalap_700_tiny.jpg" alt="rectangle"></div>
+            <div id="rectangle" onclick="geo(event)" class="selHov col-2">
+                <div ><img id="rectimg" class="imgSize" style="margin-top: 40px;transform: scale(1.4);" src="https://matek-erthetoen.hu/wp-content/uploads/2020/07/Teglalap_700_tiny.jpg" alt="rectangle"></div>
+            </div>
+            <div id="triangle" onclick="geo(event)" class="selHov col-2">
+                <div ><img id="triimg" class="imgSize" style="margin-top: 40px;transform: scale(1.2);" src="https://mersz.hu/mod/object.php?objazonosito=m97m_chap05_level2_sec31_i10_idx" alt="rectangle"></div>
             </div>
         </div>
     </section>
-        <section id="parameters" class="container-fluid">
+    <!-- Parameters -->
+    <section id="parameters" class="container-fluid">
             <div style="display: none;" id="paramA" >
                 <label for="aSide"> A Side length: </label>
                 <input id="aSide" name="aSide" value="0" type="number"></input>
@@ -39,6 +44,17 @@
             <div style="display: none;" id="paramB">
                 <label for="bSide"> B Side length: </label>
                 <input id="bSide" name="bSide" value="0" type="number"></input>
+            </div>
+            <div style="display: none;" id="paramC">
+                <label for="cSide"> C Side length: </label>
+                <input id="cSide" name="cSide" value="0" type="number"></input>
+            </div>
+            <div style="display: none;" id="paramH">
+                <label for="height"> Height: </label>
+                <input id="height" name="height" value="0" type="number"></input>
+            </div>
+            <div>
+                <button onclick="calcGeo()">Calculate</button>
             </div>
         </section>
         <section class="result row">
