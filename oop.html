@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="./oop.css" />
 </head>
 <body>
+    <h1 class="title">Select the shape whose area and perimeter you want to know</h1>
     <!-- Geometries -->
-    <section id="geometries" class="container-fluid">
-       <div style="height: 200px;" class="row">
+    <section id="geometries" >
+       <div class="row container-fluid">
             <div onclick="geo(event)" class="selHov col-2">
                 <div id="square"><img id="sqimg" class="imgSize " src="https://matek-erthetoen.hu/wp-content/uploads/2021/06/Negyzet_700_tiny.jpg" alt="square"></div>
             </div>
@@ -36,28 +37,28 @@
         </div>
     </section>
     <!-- Parameters -->
-    <section id="parameters" class="container-fluid">
-            <div style="display: none;" id="paramA" >
+    <section id="parameters">
+            <div class="parCont" style="display: none;" id="paramA" >
                 <label for="aSide"> A Side length: </label>
                 <input id="aSide" name="aSide" value="0" type="number"></input>
             </div>
-            <div style="display: none;" id="paramB">
+            <div class="parCont" style="display: none;" id="paramB">
                 <label for="bSide"> B Side length: </label>
                 <input id="bSide" name="bSide" value="0" type="number"></input>
             </div>
-            <div style="display: none;" id="paramC">
+            <div class="parCont" style="display: none;" id="paramC">
                 <label for="cSide"> C Side length: </label>
                 <input id="cSide" name="cSide" value="0" type="number"></input>
             </div>
-            <div style="display: none;" id="paramH">
+            <div class="parCont" style="display: none;" id="paramH">
                 <label for="height"> Height: </label>
                 <input id="height" name="height" value="0" type="number"></input>
             </div>
-            <div>
-                <button onclick="calcGeo()">Calculate</button>
+            <div class="parCont">
+                <button id="calcBtn" onclick="calcGeo()">Calculate</button>
             </div>
         </section>
-        <section class="result row">
+        <section class="result row container-fluid">
                 <label class="col" id="AreaResult"></label>
                 <label class="col" id="PerimResult"></label>
                 <label class="col" id="DiagonalResult"></label>
